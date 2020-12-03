@@ -1,0 +1,112 @@
+﻿<Window x:Class="TTGenWPFEdition.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TTGenWPFEdition"
+        mc:Ignorable="d"
+        Title="TTGen" Height="600" Width="400">
+	<Window.Resources>
+		<Style x:Key="OpButton">
+			<Setter Property="Control.FontFamily" Value="Roboto" />
+			<Setter Property="Control.Height" Value="60"/>
+			<Setter Property="Control.Width" Value="60"/>
+			<Setter Property="Control.Margin" Value="5"/>
+			<EventSetter Event="Button.Click" Handler="OpButton_Click" />
+		</Style>
+		<Style x:Key="MainControls">
+			<Setter Property="Control.FontFamily" Value="Roboto" />
+			<Setter Property="Control.Height" Value="60"/>
+			<Setter Property="Control.Width" Value="80"/>
+			<Setter Property="Control.Margin" Value="5"/>
+		</Style>
+
+	</Window.Resources>
+
+	<Grid Name="MainGrid" FocusManager.FocusedElement="{Binding ElementName=Input}" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+		<Grid.RowDefinitions>
+			<RowDefinition  Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition  Height="Auto"></RowDefinition>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+
+
+
+
+
+		<TextBox Grid.Row="0" Grid.Column="0" FontFamily="Roboto" FontSize="14" 
+				 Name="Input" Height="120" Width ="300"
+				 TextWrapping="Wrap"
+				 
+				 Text="{Binding Expression,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+				 
+				 MaxHeight="120" MaxWidth="300" Margin="5"/>
+
+
+		<Grid Grid.Row="1" Grid.Column="0" Name ="ButtonGrid" ShowGridLines="False" HorizontalAlignment="Center">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"></ColumnDefinition>
+				<ColumnDefinition Width="Auto"></ColumnDefinition>
+				<ColumnDefinition Width="Auto"></ColumnDefinition>
+				<ColumnDefinition Width="Auto"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+
+
+
+			<Button Grid.Column ="0" Grid.Row="0" x:Name="Conjunction" Content="∧" Style="{StaticResource OpButton}"/>
+			<Button Grid.Column ="1" Grid.Row="0" x:Name="Disjunction" Content="∨" Style="{StaticResource OpButton}"/>
+			<Button Grid.Column ="2" Grid.Row="0" x:Name="Implication" Content="⇒" Style="{StaticResource OpButton}"/>
+			<Button Grid.Column ="3" Grid.Row="0" x:Name="True" Content="True" Style="{StaticResource OpButton}"/>
+
+
+			<Button Grid.Column ="0" Grid.Row="1" x:Name="Negation" Content="¬" Style="{StaticResource OpButton}"/>
+			<Button Grid.Column ="1" Grid.Row="1" x:Name="Xor" Content="⊕" Style="{StaticResource OpButton}"/>
+			<Button Grid.Column ="2" Grid.Row="1" x:Name="Equivalence" Content="⇔" Style="{StaticResource OpButton}"/>
+			<Button Grid.Column ="3" Grid.Row="1" x:Name="False" Content="False" Style="{StaticResource OpButton}"/>
+
+
+
+		</Grid>
+
+		
+
+
+		<Grid Grid.Row="2" Grid.Column="0" x:Name="BigButtonsGrid" HorizontalAlignment="Center">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"></RowDefinition>
+			</Grid.RowDefinitions>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"></ColumnDefinition>
+				<ColumnDefinition Width="Auto"></ColumnDefinition>
+				<ColumnDefinition Width="Auto"></ColumnDefinition>
+				<ColumnDefinition  Width="Auto"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Button Grid.Column ="0"  x:Name="Clear" Content="Clear" Style="{StaticResource MainControls}"/>
+			<Button Grid.Column ="1"  x:Name="Equals" IsDefault="True" Click="Equals_Click"  Content="Equals" Grid.ColumnSpan="2" Width="120" />
+			<Button Grid.Column ="3"  x:Name="Exit" Content="Exit" Style="{StaticResource MainControls}"/>
+
+
+		</Grid>
+
+	</Grid>
+
+	
+
+		
+
+
+
+
+
+ 
+</Window>
