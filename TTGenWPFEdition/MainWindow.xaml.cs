@@ -1,20 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Controls;
-using System.Collections.ObjectModel;
-using System.Dynamic;
 
 namespace TTGenWPFEdition
 {
@@ -65,7 +52,7 @@ namespace TTGenWPFEdition
        
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
-            if (Expression.All(ch => char.IsWhiteSpace(ch)))
+            if (string.IsNullOrEmpty(Expression) || Expression.All(ch => char.IsWhiteSpace(ch)))
             {
                 return;
             }
@@ -82,6 +69,7 @@ namespace TTGenWPFEdition
             Input.SelectedText = ' ' + (sender as Button).Content.ToString() + ' ';
             Input.CaretIndex += Input.SelectedText.Length;
             Input.SelectionLength = 0;
+            Input.Focus();
 
         }
     }

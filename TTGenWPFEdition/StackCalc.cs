@@ -245,7 +245,7 @@ namespace TTGenWPFEdition
                 {
                     stack.Push(token);
                 }
-                return new List<List<string>> { new List<string>() { stack.ForceEval().Result.ToString() } };
+                return new List<List<string>> { new List<string>() { stack.ForceEval().Result ? "1" : "0" } };
             }
             List<List<string>> ret = new List<List<string>>();
             //
@@ -266,7 +266,7 @@ namespace TTGenWPFEdition
                 {
                     varibaleValues[variable] = Convert.ToBoolean((i >> (variables.Count - 1 - j)) & 1);
 
-                    row.Add(varibaleValues[variable].ToString());
+                    row.Add(varibaleValues[variable] ? "1":"0");
  
                 }
 
@@ -282,7 +282,7 @@ namespace TTGenWPFEdition
                         ret[0].Add(result.Expression);
                     }
 
-                    row.Add(result.Result.ToString());
+                    row.Add(result.Result? "1" : "0");
 
                 };
 
