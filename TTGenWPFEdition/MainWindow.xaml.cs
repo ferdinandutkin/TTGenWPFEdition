@@ -72,6 +72,10 @@ namespace TTGenWPFEdition
             Input.Focus();
 
         }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+            => Input.Clear();
+       
     }
 
 

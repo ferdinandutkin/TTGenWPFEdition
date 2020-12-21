@@ -91,7 +91,7 @@
 				<ColumnDefinition Width="Auto"></ColumnDefinition>
 				<ColumnDefinition  Width="Auto"></ColumnDefinition>
 			</Grid.ColumnDefinitions>
-			<Button Grid.Column ="0"  x:Name="Clear" Content="Clear" Style="{StaticResource MainControls}"/>
+			<Button Grid.Column ="0"  x:Name="Clear" Click="Clear_Click" Content="Clear" Style="{StaticResource MainControls}"/>
 			<Button Grid.Column ="1"  x:Name="Equals" IsDefault="True" Click="Equals_Click"  Content="Equals" Grid.ColumnSpan="2" Width="120" />
 			<Button Grid.Column ="3"  x:Name="Exit" Content="Exit" Style="{StaticResource MainControls}"/>
 
